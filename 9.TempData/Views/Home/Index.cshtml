@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index Page</h1>
+<p>This is my Home Page</p>
+
+@ViewData["data1"]
+@ViewBag.data2
+@TempData["data3"]
+
+@{
+    if(TempData["data4"]==null)
+    {
+        foreach(var item in(List<string>)TempData["data4"])
+        {
+            <h2>@item</h2>
+        }
+    }
+    else
+    {
+        <h1>No Data Found</h1>
+    }
+}
+
+@* //You can  access TempData from other native controller, and that too for one time in single redirection 
+   //TempData is used only for current or subsequent requests as it is a very short-lived instance
+   //Redirecting:is the only case when users rely on TempData
+*@
+
+
+
+@* @ViewBag.myName
+<br/>
+@ViewBag.data1
+<br />
+@ViewBag.data2
+<br />
+@ViewBag.data3
+<br />
+
+@{
+    foreach (var item in ViewBag.data4)
+    {
+        <h2>@item</h2>
+    }
+}
+@{
+    foreach (var item in ViewBag.data5)
+    {
+        <h2>@item</h2>
+    }
+} *@
+
+
+@* <h1>Index</h1>
+@ViewData["data1"]
+<br/>
+@ViewData["data2"]
+<br/>
+@ViewData["data3"]
+<br/>
+
+@{
+    foreach(var item in (string[])ViewData["Data4"])
+    {
+        <h2>@item</h2>
+    }
+}
+
+@{
+    foreach(var item in (List<String>)ViewData["Data5"])
+    {
+        <h2>@item</h2>
+    }
+} *@
+@* <h1>Current Date and Time Is @DateTime.Now</h1>
+<h1>Current Year Is @DateTime.Now.Year</h1> *@
+
+@* 
+@{
+    var name = "Programentor";
+    var age = 30;
+}
+
+<h2>Name = @name</h2>
+<h2>Age = @age</h2>
+
+@{
+    var MyName = "Vivek";
+    if(MyName.Equals("Vivek"))
+    {
+        <h3>Hey Vivek</h3>
+    }
+    else
+    {
+        <h3>Bye</h3>
+    }
+}
+
+
+@{
+    for(int i=0;i<10;i++)
+    {
+        <h2>@i</h2>
+    }
+} 
+
+@{
+    int[] a = new int[3];
+    // a[0] = 1;
+    // a[1] = 2;
+    // a[2] = 3;
+    foreach(var item in a)
+    {
+        <h3>@item</h3>
+    }
+
+    string[] names = { "Vivek", "Kumar", "Singh" };
+
+    foreach(var item in names)
+    {
+        <h3>@item</h3>
+    }
+} *@

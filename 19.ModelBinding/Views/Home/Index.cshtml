@@ -1,0 +1,84 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+@* <a href="/Home/Contact">Contact Page 1</a>
+<br/> *@
+
+@* to create server component *@
+@* htmlHelperTag *@
+@* @Html.ActionLink("Contact Page 2","Contact","Home")
+<br/>
+<a href="@Url.Action("Contact","Home")">Contact Page 3</a>
+<br/> *@
+
+@* using Tag Helpers *@
+@* <a asp-controller="Home" asp-action="Contact">Contact Page 4</a>
+
+<p>------- pass the id --------</p> *@
+
+
+@* <a href="/Home/Contact/1">Contact Page 1</a>
+<br /> *@
+
+@* to create server component *@
+@* htmlHelperTag *@
+@* @Html.ActionLink("Contact Page 2", "Edit", "Home", new { id = 1 })
+<br />
+<a href="@Url.Action("Edit","Home",new {id=1})">Contact Page 3</a>
+<br /> *@
+
+@* using Tag Helpers *@
+@* <a asp-controller="Home" asp-action="Edit" asp-route-id="1">Contact Page 4</a> *@
+
+@* creating form using tag helper
+The Form Tag Helper
+The Form Action Tag Helper
+The Input Tag Helper
+The Textarea tag helper
+The Label tag helper
+The Validation tag helpers
+The Select tag helper
+*@
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="d-grid" asp-action="Index" asp-controller="Home" method="post">
+                <label asp-for="Name">Enter Name:</label>
+                <input asp-for="Name" class="form-control" placeholder="enter name" />
+                <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                    <option value="">Select Gender</option>
+                </select>
+                <input asp-for="Age" class="form-control" placeholder="enter name" />
+                <label>Married:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="Yes" >
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="No">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        No
+                    </label>
+                </div>
+                <input asp-for="Designation" class="form-control" placeholder="enter name" />
+                <input asp-for="Salary" class="form-control" placeholder="enter name" />
+                <textarea row="5" placeholder="enter description" asp-for="Description" class="form-control"></textarea>
+                <input type="submit" value="Submit" class="btn btn-outline-primary"/>
+            </form>
+        </div>
+    </div>
+</div>

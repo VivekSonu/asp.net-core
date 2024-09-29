@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1>About Page</h1>
+<p>This is my About Us Page</p>
+
+@ViewData["data1"]
+@ViewBag.data2
+@TempData["data3"]
+
+@* //You can only access TempData from other native controller, and that too for one time in single redirection *@

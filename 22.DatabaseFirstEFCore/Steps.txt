@@ -1,0 +1,29 @@
+Step 1:
+
+Install 3 packages
+1.MIcrosoft.EntityFrameWorkCore.SqlServer
+2.MIcrosoft.EntityFrameWorkCore.Tools
+3.MIcrosoft.EntityFrameWorkCore.Design
+
+
+Step 2:
+1.Execute a command for Scaffold DbContext.
+2.Scaffold-DbContext "server=ServerName;database=DatabaseName;trusted_connection=true"
+  Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+  Scaffold-DbContext "server=(localdb)\MSSQLLocalDB;database=CodeFirstDB;trusted_connection=true"
+  Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+  Above command will generate model class and DbContext class automatically.
+
+If we update our database then how we can update our Model and DbContext.
+
+By using this command:
+
+Scaffold-DbContext "server=ServerName;database=DatabaseName;trusted_connection=true"
+Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+Step 3:
+Move Connection String from DbContext class to appsetting.json file
+
+Step 4:
+Registering Connection string in Program.cs file

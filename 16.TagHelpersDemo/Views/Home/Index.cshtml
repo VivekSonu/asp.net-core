@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<a href="/Home/Contact">Contact Page 1</a>
+<br/>
+
+@* to create server component *@
+@* htmlHelperTag *@
+@Html.ActionLink("Contact Page 2","Contact","Home")
+<br/>
+<a href="@Url.Action("Contact","Home")">Contact Page 3</a>
+<br/>
+
+@* using Tag Helpers *@
+<a asp-controller="Home" asp-action="Contact">Contact Page 4</a>
+
+<p>------- pass the id --------</p>
+
+
+<a href="/Home/Contact/1">Contact Page 1</a>
+<br />
+
+@* to create server component *@
+@* htmlHelperTag *@
+@Html.ActionLink("Contact Page 2", "Edit", "Home", new { id = 1 })
+<br />
+<a href="@Url.Action("Edit","Home",new {id=1})">Contact Page 3</a>
+<br />
+
+@* using Tag Helpers *@
+<a asp-controller="Home" asp-action="Edit" asp-route-id="1">Contact Page 4</a>
