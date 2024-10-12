@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">1st Number</label>
+                <input type="text" class="form-control" id="num1" placeholder="Enter number">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">2nd Number</label>
+                <input type="text" class="form-control" id="num2" placeholder="Enter number">
+            </div>
+            <br/>
+            <button class="btn btn-info" onclick="Display()">Add</button>
+            <button class="btn btn-info" onclick="calculate()">Calculate</button>
+            <br/>
+            <h3 id="result"></h3>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dis<t/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+    // $(document).ready(function () {
+    //     alert("Welcome To jQuery")
+    // });    
+    // function Display(){
+    //     var n1 = $("#num1").val();
+    //     var n2 = $("#num2").val();
+
+    //     $.ajax({
+    //         type:'POST',
+    //         url:'@Url.Action("Add")',
+    //         data: {num1:n1,num2:n2},
+    //         dataType:'text',
+    //         success: function (response, status, xhr) {
+    //             $("#result").text(response);
+    //         },
+    //         error: function (req, status, error) {
+    //             $("result").text(error);
+    //         }
+    //     })
+    //     // var data = name + " " + surname;
+    //     // $("#result").text(data);
+    // }
+    function calculate() {
+        var n1 = $("#num1").val();
+        var n2 = $("#num2").val();
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("Calculate")',
+            data: { num1: n1, num2: n2 },
+            dataType: 'json',
+            success: function (response, status, xhr) {
+                var data = "Addition:" + response.add +
+                    "<br>Substraction:" + response.subtract +
+                    "<br>Multiplication:" + response.multiply +
+                    "<br>Division:" + response.division;
+                $("#result").html(data);
+            },
+            error: function (req, status, error) {
+                $("result").text(error);
+            }
+        })
+    }
+</script>

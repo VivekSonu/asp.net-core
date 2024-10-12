@@ -1,5 +1,6 @@
 ﻿using _20.CodeFirstASPCore.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
@@ -37,6 +38,12 @@ namespace _20.CodeFirstASPCore.Controllers
         }
         public IActionResult Create()
         {
+            List<SelectListItem> Gender = new()
+            {
+                new SelectListItem{Value="Male",Text="Male"},
+                new SelectListItem{Value="Female",Text="Female"},
+            };
+            ViewBag.Gender = Gender;    
             return View();
         }
         [HttpPost]

@@ -1,0 +1,26 @@
+﻿@model _26.BindDDLWithDatabase.Models.StudentModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-controller="Home" asp-action="Index" method="post">
+<label class="form-label">Select Student Name</label>
+<select asp-for="Id" class="form-control" asp-items="@(new SelectList(Model.StudentsList,"Value","Text"))">
+
+</select>
+<br/>
+<input type="submit" value="Submit" class="btn btn-success"/>
+</form>
+<br/>
+@{
+    if(ViewBag.selectedValue!=null)
+    {
+        <h2>Select Student Name: @ViewBag.selectedValue</h2>
+    }
+}

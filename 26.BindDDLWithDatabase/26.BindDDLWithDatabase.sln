@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "26.BindDDLWithDatabase", "26.BindDDLWithDatabase.csproj", "{A8894974-98B8-4075-A3E6-76EF8560FC9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8894974-98B8-4075-A3E6-76EF8560FC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8894974-98B8-4075-A3E6-76EF8560FC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8894974-98B8-4075-A3E6-76EF8560FC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8894974-98B8-4075-A3E6-76EF8560FC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE18A76E-E0C0-4C49-AC43-CC131882CE42}
+	EndGlobalSection
+EndGlobal
